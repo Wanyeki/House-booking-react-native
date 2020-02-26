@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet,ScrollView,View,TextInput} from 'react-native';
+import { StyleSheet,ScrollView,View,TextInput, SafeAreaViewComponent} from 'react-native';
 import {Input,Icon, Divider,Button,Text,Image, Badge} from 'react-native-elements';
 
 export default class Items extends Component {
@@ -7,9 +7,12 @@ export default class Items extends Component {
         return (
 
             <View style={{height:'100%'}}>
+                
             <ScrollView contentContainerStyle={{alignItems:'center'}}>
                 <View style={styles.wrapper}>
                     <View style={styles.search_top}>
+                        <View style={{justifyContent:'center'}}><Icon name="menu" onPress={()=>{this.props.navigation.openDrawer()}}/></View>
+                    
                         <View style={styles.search_bar}>
                             <TextInput style={styles.search_input} placeholder="search something"/>
                             <View style={{justifyContent:'center',marginLeft:5}}>
@@ -198,20 +201,20 @@ export default class Items extends Component {
             </ScrollView>
                 <View style={styles.footer}>
                     <Divider/>
-                  <View style={styles.footer_link}>
-                      <Text  style={{...styles.footer_text,...{fontSize:16,color:'#000'}}}>Explore</Text>
+                  <View style={styles.footer_link}   >
+                      <Text onPress={()=>{this.props.navigation.navigate('Home')}} style={{...styles.footer_text,...{fontSize:16,color:'#000'}}}>Explore</Text>
                       <Badge status='success'/>
                   </View>  
                   <View style={styles.footer_link}>
-                      <Text  style={styles.footer_text}>Visited</Text>
+                      <Text  style={styles.footer_text} onPress={()=>{this.props.navigation.navigate('Show')}}>Visited</Text>
                       
                   </View>
                   <View style={styles.footer_link}>
-                      <Text  style={styles.footer_text}>Favourite</Text>
+                      <Text  style={styles.footer_text} onPress={()=>{this.props.navigation.navigate('Show')}}>Favourite</Text>
                       
                   </View>
                   <View style={styles.footer_link}>
-                      <Text  style={styles.footer_text}>Profile</Text>
+                      <Text  style={styles.footer_text} onPress={()=>{this.props.navigation.navigate('Show')}}>Profile</Text>
                       
                   </View>
                   </View>
@@ -232,7 +235,9 @@ const styles=StyleSheet.create({
         overflow:'hidden'
     },
     search_top:{
-        marginTop:30
+        marginTop:35,
+        flexDirection:"row",
+        justifyContent:'space-between'
     },
     search_bar:{
         flexDirection:'row',
@@ -240,7 +245,7 @@ const styles=StyleSheet.create({
         borderRadius:30,
         borderWidth:1,
         borderColor:'#B6B6B6',
-        width:320,
+        width:'90%',
         paddingLeft:20
     },
     search_input:{
@@ -252,6 +257,7 @@ const styles=StyleSheet.create({
         backgroundColor:'#fff',
         borderRadius:20,
         width:80,
+        height:30,
         marginLeft:7
      },
      menu_btn_text:{

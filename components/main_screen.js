@@ -12,7 +12,7 @@ class Main_screen extends Component {
                 containerStyle={styles.header}
                 backgroundColor="#fff"
                 placement="right"
-                leftComponent={<Icon name="arrow-left" type='font-awesome' raised  color="#737374"/>}
+                leftComponent={<Icon name="arrow-left" type='font-awesome' raised  color="#737374" onPress={()=>{this.props.navigation.goBack()}}/>}
                 centerComponent={<Icon name="heart" type='font-awesome' raised  color="#737374"/>}
                 rightComponent={<Icon name="upload" type='font-awesome' raised  color="#737374"/>}
                 
@@ -95,39 +95,7 @@ class Main_screen extends Component {
                             <Icon type="font-awesome" name="arrow-right" reverse color="#1F162E"/>
                         </View>
                     </View>
-                    <View style={styles.list}>
-                    <View style={{justifyContent:'center'}}>
-                        <Text style={styles.food_title}>Chapo beans</Text>
-                        </View>
-                        <View style={styles.left_list}>
-                            <View style={{justifyContent:'center'}}>
-                            <Text style={styles.price}>$7.82</Text>
-                            </View>
-                            <Icon type="font-awesome" name="arrow-right" reverse color="#1F162E"/>
-                        </View>
-                    </View>
-                    <View style={styles.list}>
-                    <View style={{justifyContent:'center'}}>
-                        <Text style={styles.food_title}>Chapo beans</Text>
-                        </View>
-                        <View style={styles.left_list}>
-                            <View style={{justifyContent:'center'}}>
-                            <Text style={styles.price}>$7.82</Text>
-                            </View>
-                            <Icon type="font-awesome" name="arrow-right" reverse color="#1F162E"/>
-                        </View>
-                    </View>
-                    <View style={styles.list}>
-                    <View style={{justifyContent:'center'}}>
-                        <Text style={styles.food_title}>Chapo beans</Text>
-                        </View>
-                        <View style={styles.left_list}>
-                            <View style={{justifyContent:'center'}}>
-                            <Text style={styles.price}>$7.82</Text>
-                            </View>
-                            <Icon type="font-awesome" name="arrow-right" reverse color="#1F162E"/>
-                        </View>
-                    </View>
+
                 </View>
                 </View>
             </ScrollView>

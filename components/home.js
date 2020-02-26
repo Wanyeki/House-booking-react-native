@@ -10,7 +10,7 @@ class Home extends Component {
                 <View style={styles.header}>
                     <View style={styles.top_section}>
                         <View style={styles.left_empty}></View>
-                        <Button title="skip" buttonStyle={styles.header_btn}/>
+                        <Button title="skip" buttonStyle={styles.header_btn} onPress={()=>{this.props.navigation.openDrawer();}}/>
                     </View>
                     <Image source={require('../assets/landing.png')}style={styles.image} />
                 </View>
@@ -25,7 +25,7 @@ class Home extends Component {
                          where amazing designs come to live bundleRenderer.renderToStream
                     </Text>
 
-                    <Button buttonStyle={styles.big_btn} containerStyle={styles.btn_container}  title="Get started" titleStyle={{color:'#000'}}/>
+                    <Button buttonStyle={styles.big_btn} containerStyle={styles.btn_container}  title="Get started" titleStyle={{color:'#000'}} onPress={()=>{this.props.navigation.navigate('Items')}}/>
                 </View>
             </ScrollView>
         );
