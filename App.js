@@ -18,7 +18,7 @@ import {createStackNavigator, StackView} from '@react-navigation/stack';
 export default function App() {
  
   return (
-    <React.Fragment>
+    
     <NavigationContainer >
     <Drawer.Navigator initialRouteName="Home" drawerContent={Custom_items}>
       <Drawer.Screen name="Home" >
@@ -30,8 +30,6 @@ export default function App() {
       <Drawer.Screen name="Show" component={Main_screen}/>
     </Drawer.Navigator>
   </NavigationContainer>
-
-  </React.Fragment>
   );
 }
 

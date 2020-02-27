@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet,ScrollView,View,TextInput, SafeAreaViewComponent} from 'react-native';
 import {Input,Icon, Divider,Button,Text,Image, Badge} from 'react-native-elements';
+import {ShadowBox} from 'react-native-neomorph-shadows';
+
 
 export default class Items extends Component {
     render() {
@@ -54,7 +56,21 @@ export default class Items extends Component {
 
                 </ScrollView>
 
-
+                <ShadowBox
+                    inner
+                    style={{
+                        shadowColor:"blue",
+                        shadowRadius:10,
+                        borderRadius:10,
+                        backgroundColor:'white',
+                        width:100,
+                        height:100,
+                        shadowOpacity:1,
+                    }}
+                    >
+                        <Text>gfghjkl;ertyuiop[yh ghjkl;as'</Text>
+                    
+                    </ShadowBox>
                 <ScrollView style={styles.sliding_section} horizontal={true}>
                    <View>
                    <Image source={require('../assets/house2.jpg')} style={styles.slide_img} containerStyle={styles.slide_img_container}/>
@@ -147,7 +163,9 @@ export default class Items extends Component {
                    
                </ScrollView>
 
+                
 
+                    
 
                <ScrollView style={styles.sliding_section} horizontal={true}>
                    <View>
